@@ -1,4 +1,5 @@
 package com.example.EncryptDecryptCiphers.controller;
+import com.example.EncryptDecryptCiphers.data.Atbash;
 import com.example.EncryptDecryptCiphers.data.Caesar;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +26,20 @@ public class CipherController {
     public String CaesarSubmit(@ModelAttribute Caesar caesar, ModelMap modelMap){
         StringBuffer encode = caesar.encode();
         modelMap.put("encode", encode);
-        return "caesarResult";
+        return "result";
+    }
+
+    @GetMapping(value = "/atbash")
+    public String AtbashInput(Model model){
+        model.addAttribute("atbash", new Atbash());
+        return "atbashForm";
+    }
+
+    @PostMapping(value = "/atbash")
+    public String AtbashSubmit(@ModelAttribute Atbash atbash, ModelMap modelMap){
+        StringBuffer encode = atbash.encode();
+        modelMap.put("encode", encode);
+        return "result";
     }
 
 }

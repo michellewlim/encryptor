@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Atbash Cipher</title>
+</head>
+<body>
+    <form action="#" th:action="@{/atbash}" th:object="${atbash}" method="post">
+        <p>Message <input type="text" th:field="*{content}"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+</body>
+</html>
