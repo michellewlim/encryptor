@@ -5,7 +5,7 @@
     <title>Atbash Cipher</title>
 </head>
 <body>
-    <form action="#" th:action="@{/atbash}" th:object="${atbash}" method="post">
+    <form autocomplete="off" action="#" th:action="@{/atbash}" th:object="${atbash}" method="post">
         <p>Message <input type="text" th:field="*{content}"/></p>
         <p><input type="submit" value="Submit"/></p>
     </form>

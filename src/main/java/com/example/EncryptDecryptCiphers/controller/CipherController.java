@@ -1,6 +1,8 @@
 package com.example.EncryptDecryptCiphers.controller;
 import com.example.EncryptDecryptCiphers.data.Atbash;
 import com.example.EncryptDecryptCiphers.data.Caesar;
+import com.example.EncryptDecryptCiphers.data.CipherRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -9,10 +11,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class CipherController {
+    @Autowired
+    protected CipherRepository cipherRepository;
+
     @RequestMapping(value = "/")
-    public String ListCiphers(){
+    public String ListCiphers(ModelMap modelMap){
+        List<CipherRepository.Cipher> ciphers= cipherRepository.getCiphers();
+        modelMap.put("ciphers", ciphers);
         return "home";
     }
 

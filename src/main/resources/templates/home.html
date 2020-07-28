@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
+    <div class="navBar">
+        <div th:each="cipher:${ciphers}">
+            <a th:href="@{'/' + ${cipher.name}}" th:text="${cipher.name}"></a>
+        </div>
+    </div>
     <p>Pick a cipher any cipher!</p>
 </body>
 </html>
