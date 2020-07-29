@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" th:href="@{/app.css}" />
 </head>
 <body>
-    <div class="navBar">
-        <div th:each="cipher:${ciphers}">
-            <a th:href="@{'/' + ${cipher.name}}" th:text="${cipher.name}"></a>
+    <div class="home">
+        <h1>Pick a cipher any cipher!</h1>
+        <div class="row">
+            <div class="links" th:each="cipher:${ciphers}">
+                <a th:href="@{'/' + ${cipher.name}}" >
+                    <div class="card" th:text="${cipher.name}">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="boxes">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     </div>
-    <p>Pick a cipher any cipher!</p>
 </body>
 </html>
