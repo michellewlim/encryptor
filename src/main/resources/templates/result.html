@@ -2,9 +2,24 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Caesar Cipher</title>
+    <title>Encoded!</title>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 </head>
 <body>
-    <p th:text="${encode}">encode</p>
+    <div class="home">
+        <p th:text="${encode}">encode</p>
+        <div class="boxes">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Caesar Cipher</title>
+    <link rel="stylesheet" th:href="@{/app.css}">
 </head>
 <body>
-    <form autocomplete="off" action="#" th:action="@{/caesar}" th:object="${caesar}" method="post">
-        <p>Message: <input type="text" th:field="*{content}" /></p>
-        <p>Key: <input type="text" th:field="*{shift}"/></p>
-        <p><input type="submit" value="Submit" /></p>
-    </form>
+    <div class="caesar">
+        <div class="boxes">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <form class="form" autocomplete="off" action="#" th:action="@{/caesar}" th:object="${caesar}" method="post">
+            <div class="elem">
+                Message:
+            </div>
+            <div class="elem">
+                <p><input class="content" type="text" th:field="*{content}" /></p>
+            </div>
+            <div class="elem">
+                <p>Key:</p>
+            </div>
+            <div class="elem">
+                <p><input type="text" th:field="*{shift}" placeholder="please enter a key"/> </p>
+            </div>
+            <div class="elem">
+                <p><input type="submit" value="Submit" /></p>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

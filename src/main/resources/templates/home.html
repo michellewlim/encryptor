@@ -7,7 +7,6 @@
 </head>
 <body>
     <div class="home">
-        <h1>Pick a cipher any cipher!</h1>
         <div class="row">
             <div class="links" th:each="cipher:${ciphers}">
                 <a th:href="@{'/' + ${cipher.name}}" >
@@ -16,6 +15,7 @@
                 </a>
             </div>
         </div>
+        <h1>Pick a cipher any cipher!</h1>
         <div class="boxes">
             <ul>
                 <li></li>

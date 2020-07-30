@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Atbash Cipher</title>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 </head>
 <body>
-    <form autocomplete="off" action="#" th:action="@{/atbash}" th:object="${atbash}" method="post">
-        <p>Message <input type="text" th:field="*{content}"/></p>
-        <p><input type="submit" value="Submit"/></p>
-    </form>
+    <div class="atbash">
+        <div class="boxes">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <form class="form" autocomplete="off" action="#" th:action="@{/atbash}" th:object="${atbash}" method="post">
+            <div class="elem">
+                <p>Message</p>
+            </div>
+            <div class="elem">
+                <p><input class="content" type="text" th:field="*{content}"/></p>
+            </div>
+            <div class="elem">
+                <p><input type="submit" value="Submit"/></p>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
